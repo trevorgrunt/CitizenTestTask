@@ -27,16 +27,14 @@ namespace CitizenTestTask
             }
             
             Console.WriteLine("\nВ алфавитном порядке:");
-            var sortedCitizens = citizens
-                .OrderBy(c => $"{c.Name} {c.Surname}")
-                .ToArray();
+            var sortedCitizens = citizens.OrderBy(c => $"{c.Name} {c.Surname}");
             foreach (var citizen in sortedCitizens)
             {
                 Console.WriteLine(citizen);
             }
 
             Console.WriteLine("\nГраждане старше 18 лет:");
-            var adults = citizens.Where(c => (DateTime.Now.Year - c.Birthday.Year) >= 18).ToArray();
+            var adults = citizens.Where(c => (DateTime.Now.Year - c.Birthday.Year) >= 18);
             foreach (var citizen in adults)
             {
                 Console.WriteLine(citizen);
@@ -61,8 +59,7 @@ namespace CitizenTestTask
                 {
                     City = g.Key,
                     Count = g.Count()
-                })
-                .ToArray();
+                });
 
             foreach (var group in maleCountByCity)
             {
